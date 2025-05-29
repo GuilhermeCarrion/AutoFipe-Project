@@ -1,0 +1,30 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    background-color: #222;
+    padding: 1em;
+    align-items: right;
+    text-decoration : none;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    list-style-type: none;
+    text-decoration : none;
+    color: white;
+}
+
+li {
+    margin-right: 1em;
+    background-color: #222;
+    color: white;
+    text-decoration: none; 
+
+}
+
+a:link, a:visited{
+    text-decoration: none!important;
+    color: white;
+    
+  }
