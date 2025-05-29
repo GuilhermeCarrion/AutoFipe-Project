@@ -1,0 +1,65 @@
+body{
+  background-color: #181818;
+  color: #fff;
+}
+
+li{
+  list-style: none;
+  margin-bottom: 10px;
+}
+
+.home-container{
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  gap: 40px;
+}
+
+.home-text{
+  flex: 2;
+}
+
+.home-text h1{
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.link{
+  color: #e63946;
+  font-weight: 500;
+}
+
+.highlight{
+  font-weight: bold;
+  color: #e63946;
+}
+
+.novidade-title{
+  color: #e63946;
+}
+
+.home-card{
+  flex: 1;
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.card{
+  background-color: #999999;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.card-image{
+  background-color: #fff;
+  height: 150px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-info h3{
+  margin: 10px 0 5px;
+}
+

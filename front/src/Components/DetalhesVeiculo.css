@@ -1,0 +1,63 @@
+.detalhes-container{
+  padding: 2rem;
+  text-align: center;
+  background-color: #181818;
+  min-height: 100vh;
+}
+
+h2{
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.detalhes-card{
+  background-color: #444444;
+  width: 320px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px  rgba(252, 163, 17, 0.2);
+  border-color: #fca311;
+  border-style: solid;
+}
+
+.preco{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #2ecc71;
+  margin: 1rem 0;
+}
+
+.detalhes-card p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+
+
+.detalhes-card button{
+  width: 100%;
+  padding: 0.6rem;
+  font-size: 1rem;
+  margin: 0.4rem 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-compra{
+  background-color: #28a745;
+  color: #fff;
+}
+
+.btn-alugar{
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-voltar{
+  background-color: #dc3535;
+  color: #fff;
+}

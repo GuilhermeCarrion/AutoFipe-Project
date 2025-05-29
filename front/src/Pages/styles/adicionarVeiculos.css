@@ -1,0 +1,38 @@
+.adicionar-container{
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.form-linha{
+  margin-bottom: 1rem;
+}
+
+select {
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 8px;
+}
+
+.detalhes-card{
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #fefae0;
+}
+
+.detalhes-card h4{
+  margin-top: 0;
+}
+
+button {
+  margin-top: 1rem;
+  background-color: #fca311;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
