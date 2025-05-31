@@ -1,14 +1,17 @@
 <?php 
-  require("./Classe/APICarros.php");
 
-  header("Content-type: application/json");
-  header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
+header("Access-Control-Allow-Headers: Content-Type");
 
-  $url = 'https://fipe.parallelum.com.br/api/v2/cars/brands/7/models';
-  // $json = file_get_contents($url);
-  // $data = json_decode($json, true);
+if($_SERVER['REQUEST_METHOD'] === "OPTIONS"){
+  http_response_code(204);
+  exit();
+}
 
-  $carro = new Carros($pdo);
+require("./Classe/APICarros.php");
+
+$carro = new Carros($pdo);
 
   $method = $_SERVER['REQUEST_METHOD'];
 
@@ -23,7 +26,7 @@
     case 'POST':
       $data = json_decode(file_get_contents("php://input"), true);
       if($carro->addNewCar($data)){
-        echo json_encode(['mensagem' => 'Carro inserido com sucesso!']);
+        echo json_encode(['mensagem' => 'Carro inserido com sucesso!', 'veiculos' => $carro->viewAllCars()]);
       }else{
         http_response_code(500);
         echo json_encode(["erro" => "Erro ao inserir carro."]);
@@ -54,20 +57,5 @@
       break;
   };
 
-  echo "<pre>";
-  var_dump($data);
-
-  $veiculos = [];
-  
-  foreach($data as $veiculo){
-    $veiculos [] = [
-      'code' => $veiculo['code'],
-      'name' => $veiculo['name'],
-    ];
-  }
-      
-  foreach($veiculos as $v){
-    //echo "Veiculo: {$v['name']} <br>";
-  }
 
 ?>

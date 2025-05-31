@@ -32,12 +32,11 @@ function Home() {
       <div className="home-card">
         <h2 className="novidade-title">Novidade</h2>
         <div className="card">
-          <div className="card-image">Img carro</div>
           <div className="card-info">
-            <h3>Carro Modelo Potencia</h3>
+            <h3>M3 Competition M 3.0 Bi-TB 510cv</h3>
             <p>Marca: BMW</p>
-            <p>Fipe: 32144-3</p>
-            <p>Valor: R$99.999</p>
+            <p>Fipe: 009280-0</p>
+            <p>Valor: R$758.501,00</p>
           </div>
         </div>
       </div>

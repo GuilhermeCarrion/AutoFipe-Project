@@ -1,4 +1,4 @@
-import "./navbar.css";
+import "./styleComponents/navbar.css";
 import { Link } from "react-router-dom";
 import { FaCarSide } from "react-icons/fa";
 

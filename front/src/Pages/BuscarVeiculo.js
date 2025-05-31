@@ -1,12 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/buscarVeiculo.css";
 
-function BuscarVeiculo({ veiculos }) {
+function BuscarVeiculo({ veiculos, atualizarVeiculos }) {
   const [busca, setBusca] = useState("");
   const [resultados, setResultados] = useState([]);
   const navigate = useNavigate();
-
 
   const buscar = () => {
     const buscaUsuario = busca.toLowerCase();
@@ -18,6 +17,10 @@ function BuscarVeiculo({ veiculos }) {
     );
     setResultados(filtro);
   };
+
+  useEffect(() => {
+    atualizarVeiculos();
+  }, [veiculos]);
 
   return (
     <div className="buscar-container">
@@ -35,34 +38,34 @@ function BuscarVeiculo({ veiculos }) {
 
       <h3>Resultados</h3>
       <div className="resultados">
-        {resultados.map((item) => (
+        {resultados.map((veiculo) => (
           <div
-            onClick={() => navigate(`/buscar/detalhes/${item.id}`)}
-            key={item.id}
+            onClick={() => navigate(`/buscar/detalhes/${veiculo.id}`)}
+            key={veiculo.id}
             className={`resultado-card ${
-              item.disponibilidade === "Disponivel"
+              veiculo.disponibilidade === "Disponivel"
                 ? "card-disponivel"
                 : "card-indisponivel"
             }`}
           >
             <div className="dados">
               <p>
-                <strong>{item.modelo}</strong>
+                <strong>{veiculo.modelo}</strong>
               </p>
-              <p>{item.marca}</p>
-              <p>{item.ano}</p>
-              <p>{item.codigo}</p>
+              <p>{veiculo.marca}</p>
+              <p>{veiculo.ano}</p>
+              <p>{veiculo.codigo}</p>
               <p
                 className={`status ${
-                  item.disponibilidade === "Disponivel"
+                  veiculo.disponibilidade === "Disponivel"
                     ? "disponivel"
                     : "indisponivel"
                 }`}
               >
-                Disponibilidade: {item.disponibilidade}
+                Disponibilidade: {veiculo.disponibilidade}
               </p>
             </div>
-            <div className="precoBusca">R${item.preco.toLocaleString('pt-BR')}</div>
+            <div className="precoBusca">R${veiculo.valor.toLocaleString("pt-BR")}</div>
           </div>
         ))}
       </div>

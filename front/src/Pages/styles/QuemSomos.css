@@ -1,0 +1,26 @@
+.quem-somos-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.quem-somos-container h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.quem-somos-container h2 {
+  font-size: 2rem;
+  margin: 0.5rem 0;
+}
+
+.quem-somos-container p {
+  max-width: 600px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-top: 1.5rem;
+}

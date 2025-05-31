@@ -9,23 +9,27 @@ import VeiculosDisponiveis from "./Pages/VeiculosDisponiveis";
 import Adicionar from "./Pages/AdicionarVeiculos";
 import QuemSomos from "./Pages/QuemSomos";
 import DetalhesVeiculo from "./Components/DetalhesVeiculo";
+import EditarVeiculo from "./Components/EditarVeiculo";
 
 function App() {
   const [veiculos, setVeiculos] = useState([]);
 
+  const buscarVeiculos = async () => {
+    try{
+      const res = await axios
+      .get("http://localhost/AutoFipe-Project/back/index.php");
+      setVeiculos(res.data);
+    }catch (error) {
+      console.error("Erro ao buscar veículos:", error);
+    }
+  };
+
   useEffect(() => {
-    axios
-      .get("http://localhost/back/index.php")
-      .then((res) => {
-        setVeiculos(res.data);
-      })
-      .catch((err) => {
-        console.error("Erro ao buscar veículos:", err);
-      });
+    buscarVeiculos();
   }, []);
 
   const deletarVeiculo = (id) => {
-    axios.delete(`http://localhost/back/index.php?id=${id}`)
+    axios.delete(`http://localhost/AutoFipe-Project/back/index.php?id=${id}`)
       .then(() => {
         setVeiculos((prev) => prev.filter((v) => v.id !== id));
       })
@@ -40,10 +44,10 @@ function App() {
       <div>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/buscar" element={<Buscar veiculos={veiculos} />} />
+          <Route path="/buscar" element={<Buscar veiculos={veiculos} atualizarVeiculos={buscarVeiculos} />} />
           <Route
             path="/buscar/detalhes/:id"
-            element={<DetalhesVeiculo veiculos={veiculos} />}
+            element={<DetalhesVeiculo veiculos={veiculos} atualizarVeiculos={buscarVeiculos} />}
           />
           <Route
             path="/veiculos"
@@ -54,6 +58,7 @@ function App() {
               />
             }
           />
+          <Route path="/veiculos/editar/:id" element={<EditarVeiculo veiculos={veiculos} atualizarVeiculos={buscarVeiculos}/>}/>
           <Route path="/adicionar" element={<Adicionar />} />
           <Route path="/quem-somos" element={<QuemSomos />} />
         </Routes>

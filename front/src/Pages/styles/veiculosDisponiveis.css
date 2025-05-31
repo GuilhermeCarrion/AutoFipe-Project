@@ -3,6 +3,87 @@
   min-height: 100vh;
 }
 
+.lista-veiculos{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem;
+  justify-content: center;  
+}
+
+.veiculo-card{
+  border-radius: 12px;
+  background-color: #444444;
+  box-shadow: 0 4px 12px  rgba(255, 255, 255, 0.2);
+  padding: 1.5rem;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.veiculo-card p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.veiculo-card strong{
+  font-weight: bold;
+  color: #fca311;
+}
+
+.disponivel{
+  font-weight: bold;
+  background-color: #fca311;
+  border-radius: 5px;
+  padding: 0.4rem;
+  width: max-content;
+  box-shadow: 0 4px 12px  rgba(252, 163, 17, 0.2);
+}
+
+.indisponivel{
+  font-weight: bold;
+  background-color: #e53935;
+  border-radius: 5px;
+  padding: 0.4rem;
+  width: max-content;
+  box-shadow: 0 4px 12px  rgba(229, 57, 53, 0.3);
+}
+
+.botoes{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.btn-deletar, .btn-editar{
+
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
+}
+
+.btn-deletar{
+  background-color: #e53935;
+}
+
+.btn-deletar:hover{
+  background-color: #c62828;
+}
+
+.btn-editar{
+  background-color: #fca311;
+}
+
+.btn-editar:hover{
+  background-color: #dd9013;
+}
+
 h2{
   text-align: center;
   margin-bottom: 2rem;

@@ -9,7 +9,7 @@ function VeiculosDisponiveis({ veiculos, onDelete }) {
     <div className="lista-container">
       <h2>Veículos Cadastrados</h2>
       <div className="lista-veiculos">
-        {veiculos.length == 0 ? (
+        {veiculos.length === 0 ? (
           <p>Nenhum veículo cadastrado</p>
         ) : (
           veiculos.map((veiculo) => (
@@ -19,7 +19,7 @@ function VeiculosDisponiveis({ veiculos, onDelete }) {
               </p>
               <p>{veiculo.marca}</p>
               <p>{veiculo.ano}</p>
-              <p>R${veiculo.preco.toLocaleString("pt-BR")}</p>
+              <p>R${Number(veiculo.valor).toLocaleString("pt-BR", {minimumFractionDigits: 2})}</p>
               <p
                 className={
                   veiculo.disponibilidade === "Disponivel"
@@ -32,7 +32,7 @@ function VeiculosDisponiveis({ veiculos, onDelete }) {
               <div className="botoes">
                 <button
                   className="btn-editar"
-                  onClick={() => navigate(`/editar/${veiculo.id}`)}
+                  onClick={() => navigate(`/veiculos/editar/${veiculo.id}`)}
                 >
                   Editar
                 </button>

@@ -31,6 +31,7 @@
   display: flex;
   flex-direction: column;
   gap: 15px;
+  cursor: pointer;
 }
 
 .resultado-card{
@@ -48,10 +49,10 @@
   box-shadow: 0 4px 12px  rgba(252, 163, 17, 0.2);
   border-color: #fca311;
   border-style: solid;
+  color: #fff;
 }
 
 .card-indisponivel{
-  background-color: rgb();
   background-color: #444444;
   box-shadow: 0 4px 12px  rgba(230, 55, 70, 0.3);
   border-color: #e63746;

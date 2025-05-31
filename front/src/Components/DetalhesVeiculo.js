@@ -1,20 +1,35 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./DetalhesVeiculo.css";
+import axios from "axios";
+import "./styleComponents/DetalhesVeiculo.css";
 
-function DetalhesVeiculo({ veiculos }) {
+function DetalhesVeiculo({ veiculos, atualizarVeiculos }) {
   const { id } = useParams();
   const navigate = useNavigate();
   const [veiculo, setVeiculo] = useState(() =>
     veiculos.find((v) => String(v.id) === id)
   );
 
-  const handleAcao = (tipo) => {
-    alert(`Veículo ${tipo} com sucesso!`);
-    setVeiculo((prev) => ({
-      ...prev,
-      disponibilidade: tipo === "comprado" ? "Vendido" : "Alugado",
-    }));
+  const handleAcao = async (tipo) => {
+    try{
+      await axios.put(`http://localhost/AutoFipe-Project/back/index.php?id=${veiculo.id}`, {
+        ...veiculo, 
+        disponibilidade: "Indisponivel",
+      },{
+        headers: {
+          "Content-Type": "application/json",
+        }
+      });
+
+      alert(`Veículo ${tipo} com sucesso!`);
+      setVeiculo((prev) => ({
+        ...prev,
+        disponibilidade: "Indisponivel",
+      }));
+    }catch (error) {
+      console.error("Erro ao atualizar veiculo:", error);
+      alert("Erro ao atualizar status do veículo.");
+    }
   };
 
   if (!veiculo) {
@@ -29,7 +44,7 @@ function DetalhesVeiculo({ veiculos }) {
         <p>
           {veiculo.marca} - {veiculo.codigo}
         </p>
-        <span className="preco" >R${veiculo.preco.toLocaleString("pt-BR")}</span>
+        <span className="preco" >R${Number(veiculo.valor).toLocaleString("pt-BR")}</span>
         {veiculo.disponibilidade === "Disponivel" && (
           <>
             <button
