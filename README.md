@@ -1,7 +1,7 @@
 # AutoFipe-Project
 
-A AutoFipe é um protótipo de uma loja de aluguéis e compra de veículos. Está em constante mudança, a criação desse projeto foi inicialmente começou com um trabalho da faculdade porém será inteiro retrabalhado e reconstruido com grandes melhorias e adições de funcionalidades.  
-Oferecemos cinco opções de funcionalidades, dentre elas:
+A AutoFipe é um protótipo de uma loja de aluguéis e compra de veículos. A criação desse projeto inicialmente começou com um trabalho da faculdade porém será inteiro retrabalhado e reconstruido com grandes melhorias e adições de funcionalidades.  
+Até o momento oferecemos cinco opções de funcionalidades, dentre elas:
 
 Home - Você está aqui agora, a home é nossa página inicial, te apresentamos um pouco a nossa proposta de projeto e ajudamos você a testa-la.
 
